@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Học Tập - Chọn Chuyên Ngành</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 800px;
+            width: 100%;
+            transform: translateY(-20px);
+            animation: slideUp 0.8s ease-out forwards;
+        }
+
+        @keyframes slideUp {
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            color: #2c3e50;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .header p {
+            color: #7f8c8d;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        .subjects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .subject-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border-radius: 15px;
+            padding: 30px 20px;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .subject-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left 0.5s;
+        }
+
+        .subject-card:hover::before {
+            left: 100%;
+        }
+
+        .subject-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            border-color: #667eea;
+        }
+
+        .subject-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .marketing-card .subject-icon {
+            color: #e74c3c;
+        }
+
+        .design-card .subject-icon {
+            color: #9b59b6;
+        }
+
+        .it-card .subject-icon {
+            color: #3498db;
+        }
+
+        .subject-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .subject-description {
+            color: #7f8c8d;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .question-count {
+            background: #ecf0f1;
+            color: #34495e;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: inline-block;
+        }
+
+        .footer {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid #ecf0f1;
+            color: #95a5a6;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 20px;
+                margin: 20px;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .subjects-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .subject-card {
+                padding: 25px 15px;
+            }
+        }
+
+        /* Hover effects */
+        .marketing-card:hover {
+            background: linear-gradient(135deg, #fff5f5 0%, #fee);
+        }
+
+        .design-card:hover {
+            background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff);
+        }
+
+        .it-card:hover {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎓 Quiz Học Tập</h1>
+            <p>Chọn chuyên ngành bạn muốn kiểm tra kiến thức</p>
+        </div>
+
+        <div class="subjects-grid">
+            <a href="marketing/marketing.html" class="subject-card marketing-card">
+                <span class="subject-icon">📈</span>
+                <h3 class="subject-title">Marketing</h3>
+                <p class="subject-description">Kiểm tra kiến thức về Marketing mix, SEO, Digital Marketing, Brand Management và các chiến lược tiếp thị hiện đại</p>
+                <span class="question-count">20 câu hỏi</span>
+            </a>
+
+            <a href="design/design.html" class="subject-card design-card">
+                <span class="subject-icon">🎨</span>
+                <h3 class="subject-title">Thiết kế Đồ họa</h3>
+                <p class="subject-description">Đánh giá hiểu biết về Typography, Color Theory, Adobe Creative Suite, UI/UX và các nguyên tắc thiết kế</p>
+                <span class="question-count">20 câu hỏi</span>
+            </a>
+
+            <a href="it/it.html" class="subject-card it-card">
+                <span class="subject-icon">💻</span>
+                <h3 class="subject-title">Công nghệ Thông tin</h3>
+                <p class="subject-description">Thử thách kiến thức về Lập trình, Mạng máy tính, Hệ điều hành, Web Development và Công nghệ</p>
+                <span class="question-count">20 câu hỏi</span>
+            </a>
+        </div>
+
+        <div class="footer">
+            <p>💡 Mỗi quiz bao gồm 20 câu hỏi trắc nghiệm với độ khó từ cơ bản đến nâng cao</p>
+            <p>⏱️ Không giới hạn thời gian - Hãy suy nghĩ kỹ trước khi chọn đáp án!</p>
+        </div>
+    </div>
+
+    <script>
+        // Add smooth scroll animation for better UX
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.subject-card');
+            
+            cards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.2}s`;
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    card.style.animation = 'slideUp 0.6s ease-out forwards';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+        });
+
+        // Add click analytics (if needed)
+        document.querySelectorAll('.subject-card').forEach(card => {
+            card.addEventListener('click', function(e) {
+                const subject = this.classList.contains('marketing-card') ? 'Marketing' : 
+                              this.classList.contains('design-card') ? 'Design' : 'IT';
+                
+                // Add loading state
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    // Navigation will happen naturally via href
+                }, 150);
+                
+                console.log(`User selected: ${subject}`);
+            });
+        });
+    </script>
+</body>
+</html>

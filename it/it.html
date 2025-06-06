@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Công nghệ Thông tin</title>
+    <link rel="stylesheet" href="it.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="quiz-header">
+            <div class="header-content">
+                <a href="../index.html" class="back-btn">
+                    <span class="back-icon">←</span>
+                    Quay lại
+                </a>
+                <div class="quiz-info">
+                    <h1 class="quiz-title">
+                        <span class="title-icon">💻</span>
+                        Quiz Công nghệ Thông tin
+                    </h1>
+                    <p class="quiz-description">Kiểm tra kiến thức về Lập trình, Mạng máy tính, Hệ điều hành và Web Development</p>
+                </div>
+                <div class="quiz-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" id="totalQuestions">20</span>
+                        <span class="stat-label">Câu hỏi</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="currentQuestion">0</span>
+                        <span class="stat-label">Hiện tại</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Quiz Content -->
+        <main class="quiz-main">
+            <!-- Start Screen -->
+            <div id="startScreen" class="start-screen">
+                <div class="start-content">
+                    <div class="start-icon">🚀</div>
+                    <h2>Sẵn sàng thử thách?</h2>
+                    <p>Quiz gồm 20 câu hỏi về các lĩnh vực:</p>
+                    <ul class="topics-list">
+                        <li><span class="topic-icon">⚙️</span> Phần cứng máy tính</li>
+                        <li><span class="topic-icon">🖥️</span> Hệ điều hành</li>
+                        <li><span class="topic-icon">🌐</span> Mạng máy tính</li>
+                        <li><span class="topic-icon">💾</span> Cơ sở dữ liệu</li>
+                        <li><span class="topic-icon">👨‍💻</span> Lập trình</li>
+                        <li><span class="topic-icon">🌍</span> Web Development</li>
+                    </ul>
+                    <button id="startBtn" class="start-btn">Bắt đầu Quiz</button>
+                </div>
+            </div>
+
+            <!-- Quiz Screen -->
+            <div id="quizScreen" class="quiz-screen" style="display: none;">
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <span class="progress-text" id="progressText">1 / 20</span>
+                </div>
+
+                <div class="question-container">
+                    <div class="question-number" id="questionNumber">Câu hỏi 1</div>
+                    <div class="question-text" id="questionText"></div>
+                </div>
+
+                <div class="answers-container" id="answersContainer">
+                    <!-- Answers will be inserted here -->
+                </div>
+
+                <div class="quiz-controls">
+                    <button id="prevBtn" class="nav-btn prev-btn" disabled>
+                        <span class="btn-icon">←</span>
+                        Câu trước
+                    </button>
+                    <button id="nextBtn" class="nav-btn next-btn" disabled>
+                        Câu tiếp
+                        <span class="btn-icon">→</span>
+                    </button>
+                </div>
+
+                <div class="quiz-actions">
+                    <button id="submitBtn" class="submit-btn" style="display: none;">
+                        Nộp bài
+                        <span class="submit-icon">✓</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Result Screen -->
+            <div id="resultScreen" class="result-screen" style="display: none;">
+                <div class="result-content">
+                    <div class="result-icon" id="resultIcon"></div>
+                    <h2 class="result-title" id="resultTitle"></h2>
+                    <div class="score-display">
+                        <div class="score-circle">
+                            <div class="score-number" id="scoreNumber"></div>
+                            <div class="score-total">/ 20</div>
+                        </div>
+                    </div>
+                    <div class="result-message" id="resultMessage"></div>
+                    
+                    <div class="result-actions">
+                        <button id="reviewBtn" class="action-btn review-btn">
+                            <span class="btn-icon">📝</span>
+                            Xem lại đáp án
+                        </button>
+                        <button id="retakeBtn" class="action-btn retake-btn">
+                            <span class="btn-icon">🔄</span>
+                            Làm lại
+                        </button>
+                        <a href="../index.html" class="action-btn home-btn">
+                            <span class="btn-icon">🏠</span>
+                            Trang chủ
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review Screen -->
+            <div id="reviewScreen" class="review-screen" style="display: none;">
+                <div class="review-header">
+                    <h2>📝 Xem lại đáp án</h2>
+                    <button id="closeReviewBtn" class="close-review-btn">✕</button>
+                </div>
+                <div class="review-content" id="reviewContent">
+                    <!-- Review content will be inserted here -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="it.js"></script>
+</body>
+</html>
