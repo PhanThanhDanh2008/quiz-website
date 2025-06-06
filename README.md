@@ -39,9 +39,6 @@ git clone https://github.com/PhanThanhDanh2008/quiz-website.git
 * [ ] Responsive trên mobile
 * [ ] Phản hồi theo điểm (VD: "Giỏi", "Cần cải thiện"...)
 ---
-## 📸 Ảnh minh họa *(tuỳ chọn)*
-> Thêm 1-2 screenshot giao diện tại đây (nếu muốn)
---
 ## 👨‍💼 Tác giả
 **Phan Thanh Danh**
 GitHub: [@PhanThanhDanh2008](https://github.com/PhanThanhDanh2008)
