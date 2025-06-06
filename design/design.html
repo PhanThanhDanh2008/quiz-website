@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz Marketing</title>
-    <link rel="stylesheet" href="marketing.css">
+    <title>Quiz Thiết Kế Đồ Họa</title>
+    <link rel="stylesheet" href="design.css">
+    <script src="design.js" defer></script>
 </head>
 <body>
     <div class="container">
+        <!-- Header -->
         <header class="quiz-header">
             <div class="header-content">
                 <a href="../index.html" class="back-btn">
@@ -16,10 +18,12 @@
                 </a>
                 <div class="quiz-info">
                     <h1 class="quiz-title">
-                        <span class="title-icon">📈</span>
-                        Quiz Marketing
+                        <span class="title-icon">🎨</span>
+                        Quiz Thiết Kế Đồ Họa
                     </h1>
-                    <p class="quiz-description">Kiểm tra kiến thức về 4P, quảng cáo, thương hiệu, digital marketing và thị trường</p>
+                    <p class="quiz-description">
+                        Kiểm tra kiến thức về Thiết kế đồ họa, Typography, UI/UX và In ấn
+                    </p>
                 </div>
                 <div class="quiz-stats">
                     <div class="stat-item">
@@ -34,95 +38,87 @@
             </div>
         </header>
 
+        <!-- Main Content -->
         <main class="quiz-main">
-            <div id="startScreen" class="start-screen">
+            <!-- Start Screen -->
+            <div class="start-screen" id="startScreen">
                 <div class="start-content">
-                    <div class="start-icon">📊</div>
+                    <span class="start-icon">🚀</span>
                     <h2>Sẵn sàng thử thách?</h2>
-                    <p>Quiz gồm 20 câu hỏi xoay quanh kiến thức cốt lõi trong ngành Marketing:</p>
+                    <p>Quiz gồm 20 câu hỏi về các lĩnh vực:</p>
                     <ul class="topics-list">
-                        <li><span class="topic-icon">📢</span> Quảng cáo & Xúc tiến</li>
-                        <li><span class="topic-icon">🏷️</span> Thương hiệu & Định vị</li>
-                        <li><span class="topic-icon">💡</span> Marketing số</li>
-                        <li><span class="topic-icon">🔍</span> Nghiên cứu thị trường</li>
-                        <li><span class="topic-icon">📦</span> 4P - Marketing Mix</li>
+                        <li><span class="topic-icon">🖌️</span> Thiết kế đồ họa</li>
+                        <li><span class="topic-icon">🔤</span> Typography</li>
+                        <li><span class="topic-icon">🎨</span> Hệ màu và in ấn</li>
+                        <li><span class="topic-icon">📱</span> UI/UX Design</li>
                     </ul>
-                    <button id="startBtn" class="start-btn">Bắt đầu Quiz</button>
+                    <button class="start-btn" id="startBtn">Bắt đầu Quiz</button>
                 </div>
             </div>
 
-            <div id="quizScreen" class="quiz-screen" style="display: none;">
+            <!-- Quiz Screen -->
+            <div class="quiz-screen" id="quizScreen" style="display: none;">
                 <div class="progress-container">
                     <div class="progress-bar">
                         <div class="progress-fill" id="progressFill"></div>
                     </div>
-                    <span class="progress-text" id="progressText">1 / 20</span>
+                    <div class="progress-text" id="progressText">1 / 20</div>
                 </div>
-
                 <div class="question-container">
                     <div class="question-number" id="questionNumber">Câu hỏi 1</div>
                     <div class="question-text" id="questionText"></div>
                 </div>
-
                 <div class="answers-container" id="answersContainer"></div>
-
                 <div class="quiz-controls">
-                    <button id="prevBtn" class="nav-btn prev-btn" disabled>
-                        <span class="btn-icon">←</span>
-                        Câu trước
+                    <button class="nav-btn" id="prevBtn" disabled>
+                        <span class="btn-icon">←</span> Câu trước
                     </button>
-                    <button id="nextBtn" class="nav-btn next-btn" disabled>
-                        Câu tiếp
-                        <span class="btn-icon">→</span>
+                    <button class="nav-btn" id="nextBtn" disabled>
+                        Câu tiếp <span class="btn-icon">→</span>
                     </button>
                 </div>
-
                 <div class="quiz-actions">
-                    <button id="submitBtn" class="submit-btn" style="display: none;">
-                        Nộp bài
-                        <span class="submit-icon">✓</span>
+                    <button class="submit-btn" id="submitBtn" style="display: none;">
+                        Nộp bài <span class="submit-icon">✓</span>
                     </button>
                 </div>
             </div>
 
-            <div id="resultScreen" class="result-screen" style="display: none;">
+            <!-- Result Screen -->
+            <div class="result-screen" id="resultScreen" style="display: none;">
                 <div class="result-content">
-                    <div class="result-icon" id="resultIcon"></div>
+                    <span class="result-icon" id="resultIcon"></span>
                     <h2 class="result-title" id="resultTitle"></h2>
                     <div class="score-display">
                         <div class="score-circle">
-                            <div class="score-number" id="scoreNumber"></div>
-                            <div class="score-total">/ 20</div>
+                            <span class="score-number" id="scoreNumber">0</span>
+                            <span class="score-total">/ 20</span>
                         </div>
                     </div>
-                    <div class="result-message" id="resultMessage"></div>
+                    <p class="result-message" id="resultMessage"></p>
                     <div class="result-actions">
-                        <button id="reviewBtn" class="action-btn review-btn">
-                            <span class="btn-icon">📝</span>
-                            Xem lại đáp án
+                        <button class="action-btn review-btn" id="reviewBtn">
+                            <span class="btn-icon">📝</span> Xem lại đáp án
                         </button>
-                        <button id="retakeBtn" class="action-btn retake-btn">
-                            <span class="btn-icon">🔄</span>
-                            Làm lại
+                        <button class="action-btn retake-btn" id="retakeBtn">
+                            <span class="btn-icon">🔄</span> Làm lại
                         </button>
                         <a href="../index.html" class="action-btn home-btn">
-                            <span class="btn-icon">🏠</span>
-                            Trang chủ
+                            <span class="btn-icon">🏠</span> Trang chủ
                         </a>
                     </div>
                 </div>
             </div>
 
-            <div id="reviewScreen" class="review-screen" style="display: none;">
+            <!-- Review Screen -->
+            <div class="review-screen" id="reviewScreen" style="display: none;">
                 <div class="review-header">
                     <h2>📝 Xem lại đáp án</h2>
-                    <button id="closeReviewBtn" class="close-review-btn">✕</button>
+                    <button class="close-review-btn" id="closeReviewBtn">✕</button>
                 </div>
                 <div class="review-content" id="reviewContent"></div>
             </div>
         </main>
     </div>
-
-    <script src="marketing.js"></script>
 </body>
 </html>
