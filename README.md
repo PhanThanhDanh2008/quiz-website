@@ -1,4 +1,4 @@
-# 🎓 Quiz Website - Trắc Nghiệm Đa Chuyên Ngành
+# 🎓 Quiz Website - Trắc Nghiệm 3 Chuyên Ngành
 
 Website trắc nghiệm học tập bằng **HTML/CSS/JavaScript thuần**, dành cho sinh viên Cao đẳng. Dự án gồm 60 câu hỏi chia đều cho 3 chuyên ngành: **Công nghệ Thông tin**, **Marketing**, và **Thiết kế Đồ họa**.
 ## 🌟 Tính năng chính
